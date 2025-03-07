@@ -30,7 +30,7 @@ function Page3() {
     try {
       // Update user information
       await axios.put(`
-       https://192.168.33.17:5000/api/UpdateUser/${userId}`, dataToSend);
+       http://192.168.33.17:5000/api/UpdateUser/${userId}`, dataToSend);
       toast.success('Information soumise avec succès!', { closeOnClick: true });
       
       // Navigate to the Spin page

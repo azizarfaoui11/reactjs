@@ -29,7 +29,7 @@ function Profitez() {
 
     try {
       // Make a PUT request to update the user's commande
-      const response = await axios.put(`https://192.168.33.10:5000/api/UpdateUser/${userId}`, {
+      const response = await axios.put(`http://192.168.33.10:5000/api/UpdateUser/${userId}`, {
         commande: selectedPackName, // Posting the selected pack name
       });
 
