@@ -58,7 +58,7 @@ const Wheel = () => {
   // Fetch products from API
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://polygame.tn/api/getALLProd');
+      const response = await axios.get('https://192.168.33.17:5000/api/getALLProd');
       const data = response.data;
       const availableProducts = data;
       setProducts(availableProducts);
@@ -79,7 +79,7 @@ const Wheel = () => {
   
     try {
       // Call backend to spin and get the result
-      const { data } = await axios.put('https://polygame.tn/api/spin/:id'); // Replace :id with the correct parameter if needed
+      const { data } = await axios.put('https://192.168.33.17:5000/api/spin/:id'); // Replace :id with the correct parameter if needed
       const { prize, allProducts } = data;
   
       console.log('Prize:', prize);
@@ -129,7 +129,7 @@ const Wheel = () => {
           // Only update rewards if prize ID is not 0 or 5
           if (prize.id !== 0 && prize.id !== 5) {
             // Update rewards in the backend when a prize is won
-            await axios.post('https://polygame.tn/api/updateRewards', {
+            await axios.post('https://192.168.33.17:5000/api/updateRewards', {
               userId,
               productName: prize.productName, // Send the won product's name
             });
